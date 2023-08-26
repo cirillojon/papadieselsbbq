@@ -1,0 +1,34 @@
+.expectation {
+    background-color: $wood;
+    font-size: $font-med;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+
+    h1 {
+        text-align: left;
+
+        @include breakpoint-down(medium) {
+            text-align: center;
+        }
+
+        @include breakpoint-up(large) {
+            padding-top: 3rem;
+        }
+    }
+
+    p {
+        font-weight: 350;
+    }
+
+    &__intro {
+        font-weight: 300;
+        text-align: left;
+        width: 65%;
+
+        @include breakpoint-down(medium) {
+            text-align: center;
+            width: 100%;
+        }
+
+    }
+}

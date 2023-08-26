@@ -1,0 +1,216 @@
+.has-fade {
+  visibility: hidden;
+}
+
+@keyframes fade-in {
+  from {
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: visible;
+    opacity: 1;
+  }
+}
+
+@keyframes fade-out {
+  from {
+    visibility: visible;
+    opacity: 1;
+  }
+
+  99% {
+    visibility: visible;
+    opacity: 0;
+  }
+
+  to {
+    visibility: hidden;
+    opacity: 0;
+  }
+}
+
+// Helper classes
+.fade-in {
+  animation: fade-in 250ms ease-in-out forwards;
+}
+
+.fade-out {
+  animation: fade-out 250ms ease-in-out forwards;
+}
+
+
+@keyframes wipe-enter {
+  0% {
+    transform: scale(0, .025);
+  }
+
+  50% {
+    transform: scale(1, .025);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .expand-animation {
+    animation: wipe-enter 1s 1;
+  }
+}
+
+
+@keyframes shake-animation {
+  0% {
+    transform: translate(0, 0)
+  }
+
+  1.78571% {
+    transform: translate(5px, 0)
+  }
+
+  3.57143% {
+    transform: translate(0, 0)
+  }
+
+  5.35714% {
+    transform: translate(5px, 0)
+  }
+
+  7.14286% {
+    transform: translate(0, 0)
+  }
+
+  8.92857% {
+    transform: translate(5px, 0)
+  }
+
+  10.71429% {
+    transform: translate(0, 0)
+  }
+
+  100% {
+    transform: translate(0, 0)
+  }
+}
+
+.shake {
+  // animation: shake-animation 4.72s ease infinite;
+  animation: shake-animation 10s ease infinite;
+}
+
+@keyframes f {
+
+  /*
+           +-----A
+           .     .
+           B-----+
+  
+  transit 1,2,3,4 to A
+  transit 5,6,7,8 to B
+  */
+  /*
+       2   +-----+ 3
+       1,5 .     . 4,8
+       6   +-----+ 7
+  
+  1>2>3>4=cw
+  5>6>7>8=ccw
+  */
+  from {
+    clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0,
+        /*1,2,3,4*/
+        0 100%, 0 100%, 0 100%, 0 100%);
+    /*5,6,7,8*/
+  }
+
+  10%,
+  to {
+    clip-path: polygon(0 50%, 0 0, 100% 0, 100% 50%,
+        /*1,2,3,4*/
+        0 50%, 0 100%, 100% 100%, 100% 50%);
+    /*5,6,7,8*/
+  }
+}
+
+.poly-swipe {
+  animation: f 10s 2s;
+}
+
+[data-scroll] {
+  transition: opacity 2s;
+}
+
+[data-scroll="in"] {
+  opacity: 1;
+}
+
+[data-scroll="out"] {
+  opacity: 0;
+}
+
+@keyframes slide-in {
+  100% {
+    transform: translateX(0%);
+  }
+}
+
+@-webkit-keyframes slide-in {
+  100% {
+    -webkit-transform: translateX(0%);
+  }
+}
+
+@keyframes slide-out {
+  0% {
+    transform: translateX(0%);
+  }
+
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@-webkit-keyframes slide-out {
+  0% {
+    -webkit-transform: translateX(0%);
+  }
+
+  100% {
+    -webkit-transform: translateX(-100%);
+  }
+}
+
+.from-left {
+  transform: translateX(-100%);
+}
+
+.from-right {
+  transform: translateX(100%);
+}
+
+.from-left,
+.from-right {
+  transition: opacity 250ms ease-in, transform 400ms ease-in;
+  opacity: 0;
+}
+
+.from-left.appear,
+.from-right.appear {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+
+.slide-out {
+  animation: slide-out 0.5s forwards;
+  -webkit-animation: slide-out 0.5s forwards;
+}
+
+.slide-in {
+  animation: slide-in 0.5s forwards;
+  -webkit-animation: slide-in 0.5s forwards;
+}

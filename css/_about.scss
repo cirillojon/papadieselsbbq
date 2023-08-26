@@ -1,0 +1,46 @@
+.about {
+    background-color: $wood;
+    padding-top: 4rem;
+    padding-bottom: 5rem;
+    font-size: $font-med;
+
+    h1 {
+        text-align: center;
+    }
+
+    p {
+        padding-top: 2rem;
+        text-align: left;
+    }
+
+    &__img {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+
+        img {
+            max-height: 100%;
+            max-width: 100%;
+            /* remove extra space below image */
+            display: block;
+            margin-left: .5rem;
+            border-radius: 5px;
+
+
+            @include breakpoint-down(medium) {
+                max-width: 100%;
+                margin-left: 0;
+            }
+        }
+    }
+
+    &__text {
+        @include breakpoint-down(medium) {
+            width: 90%;
+        }
+        @include breakpoint-up(large) {
+            width: 70%;
+        }
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

@@ -1,0 +1,106 @@
+.catering {
+    background-color: $wood;
+    padding-top: 4rem;
+    padding-bottom: 10rem;
+    font-size: $font-lg;
+    overflow-x: hidden;
+
+    @include breakpoint-down(medium) {
+        font-size: $font-med;
+    }
+
+
+    h1 {
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+
+    p {
+        text-align: left;
+
+        // @include breakpoint-up(medium) {
+        //     text-align: left;
+        //     margin-left: 1.5rem;
+        // }
+
+        // @include breakpoint-up(large) {
+        //     width: 65%;
+        // }
+    }
+
+    h2,
+    h3 {
+        padding-top: 2rem;
+
+        text-align: center;
+    }
+
+    .cards {
+        padding-top: 2.5rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        flex-wrap: wrap;
+    }
+
+    .card-header {
+        font-size: $font-lg;
+        font-weight: 600;
+        color: $orange;
+    }
+
+    .card-text {
+        font-size: $font-med;
+        font-weight: 350;
+        color: $darkBrown;
+    }
+
+    .button {
+        font-size: $font-med;
+        text-align: center;
+        display: block;
+        margin: 0 auto;
+        color: $wood;
+        background: $darkBrown;
+        border-radius: 0%;
+    }
+
+    .button_group {
+        margin-top: 5rem;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .msg_button,
+    .call_button {
+        width: 210px;
+        padding-right: 20px;
+    }
+
+    .call_button {
+        @include breakpoint-down(small) {
+            padding-bottom: 2.5rem;
+        }
+    }
+
+    &__text {
+        padding-left: 12px;
+
+        @include breakpoint-up(large) {
+            width: 65%;
+        }
+
+        @include breakpoint-down(medium) {
+            width: 90%;
+        }
+
+        @include breakpoint-down(small) {
+            width: 100%;
+        }
+
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

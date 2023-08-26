@@ -1,0 +1,174 @@
+.menu {
+    background-color: $wood;
+    // padding: 5rem 5rem;
+    padding-top: 10rem;
+    padding-bottom: 10rem;
+
+    h1 {
+        text-align: center;
+        padding-bottom: 3rem;
+    }
+
+    p {
+        font-weight: 350;
+        font-size: $font-lg;
+        text-align: center;
+
+        @include breakpoint-down(small) {
+            font-size: $font-med;
+        }
+    }
+
+    /*Menu starts*/
+    .menu_tab {
+        margin: 0 auto;
+        justify-content: center;
+    }
+
+    .nav-item {
+        display: inline-block;
+        text-align: center;
+        border: 1px solid $darkBrown;
+        border-radius: 8px;
+    }
+
+    .nav-tabs .nav-link {
+        transition: .3s;
+    }
+
+    .nav-tabs .nav-link.active {
+        background: $red;
+        color: #fff;
+        font-weight: 700;
+        border: 1px solid $darkBrown;
+        border-radius: 5px;
+        text-transform: capitalize;
+    }
+
+    .nav-link {
+        color: $darkBrown;
+    }
+
+    .nav-tabs .nav-link:hover {
+        background: $red;
+        color: #fff;
+        border: 1px solid $darkBrown;
+        border-radius: 5px;
+    }
+
+    .single_menu {
+        position: relative;
+        margin-bottom: 75px;
+        transition: .3s;
+    }
+
+    .single_menu:hover img {
+        -webkit-clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 100% 0, 100% 50%, 100% 100%, 0% 100%);
+    }
+
+    .single_menu img {
+        width: 25%;
+        position: absolute;
+        height: 150px;
+        -webkit-clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        clip-path: polygon(0% 0%, 75% 0%, 100% 50%, 75% 100%, 0% 100%);
+        transition: .3s;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+
+        @include breakpoint-down(medium) {
+            width: 40%;
+            height: 160px;
+        }
+    }
+
+    .menu_content {
+        padding-left: 250px;
+
+        @include breakpoint-down(medium) {
+            padding-left: 140px;
+        }
+
+        @include breakpoint-down(small) {
+            padding-left: 175px;
+        }
+    }
+
+    .menu_content h4 {
+        font-size: 25px;
+        font-weight: 300;
+        border-bottom: 1px dashed $red;
+        line-height: 2;
+        text-transform: capitalize;
+    }
+
+    .menu_content h4 span {
+        font-size: 25px;
+        font-weight: 800;
+        float: right;
+        font-style: italic;
+        color: $red;
+    }
+
+    .menu_content p {
+        font-weight: 350;
+        font-size: $font-med;
+        text-align: left;
+    }
+
+    .menu_btn.btn.btn-danger {
+        margin: 0 auto;
+        display: block;
+        width: 140px;
+    }
+
+    /*Menu ends*/
+    .menu_btn.btn.btn-danger {
+        margin: 0 auto;
+        display: block;
+        width: 140px;
+    }
+
+    .btn.btn-danger {
+        background: $red;
+        border: 1px solid $orange;
+        transition: .3s;
+        position: relative;
+        z-index: 1;
+        text-transform: capitalize;
+        overflow: hidden;
+        // Font styling for the menu button
+        padding: 15px 25px;
+        font-family: 'Bebas Neue', 'Helvetica', sans-serif;
+        letter-spacing: 0.125rem;
+        font-weight: 500;
+        font-size: $font-med;
+        transition: all 0.3s ease-in-out;
+
+        &:hover {
+            text-decoration: none;
+            // opacity: 0.85;
+            transform: scale(1.2);
+            color: black;
+            background-color: $wood;
+        }
+    }
+
+    // .btn.btn-danger::before {
+    //     position: absolute;
+    //     content: '';
+    //     background: $darkBrown;
+    //     width: 100%;
+    //     height: 100%;
+    //     left: -100%;
+    //     top: 100%;
+    //     transition: .3s;
+    //     z-index: -1;
+    // }
+
+    // .btn.btn-danger:hover:before {
+    //     top: 0;
+    //     left: 0;
+    // }
+}
