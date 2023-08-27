@@ -98,56 +98,52 @@
       </header>
       <!-- End Navigation Code -->
       <!-- Shop Section -->
-      <section class="shop-section">
-         <div class="container-custom">
-            <h1>Shop Papa Diesel's BBQ Products</h1>
-            <div class="category-list">
-               <button onclick="showCategory('shirts')">Shirts</button>
-               <button onclick="showCategory('placeholder1')">Placeholder 1</button>
-               <button onclick="showCategory('placeholder2')">Placeholder 2</button>
-               <!-- Add more categories here -->
-            </div>
-            <div class="product-grid" id="productGrid">
-               <!-- Product items will go here -->
-            </div>
-         </div>
-      </section>
-      <script>
-         function showCategory(category) {
-           const productGrid = document.getElementById("productGrid");
-           productGrid.innerHTML = ''; // Clear the grid
-           let products;
-           
-           if (category === 'shirts') {
-             products = [
-               { img: '../images/shirt1.jpg', title: 'Shirt 1', desc: 'Description 1', price: '$20.00' },
-               { img: '../images/shirt2.jpg', title: 'Shirt 2', desc: 'Description 2', price: '$22.00' },
-               // Add shirts here
-             ];
-           } else if (category === 'placeholder1') {
-             products = [
-               // Add placeholder 1 products here
-             ];
-           } else if (category === 'placeholder2') {
-             products = [
-               // Add placeholder 2 products here
-             ];
-           }
-           
-           products.forEach(product => {
-             const productItem = document.createElement('div');
-             productItem.className = 'product-item';
-             productItem.innerHTML = `
-               <img src="${product.img}" alt="${product.title}">
-               <h2>${product.title}</h2>
-               <p>${product.desc}</p>
-               <span class="price">${product.price}</span>
-               <button>Add to Cart</button>
-             `;
-             productGrid.appendChild(productItem);
-           });
-         }
-      </script>
+<section class="shop-section">
+    <div class="container-custom">
+      <h1>Shop Papa Diesel's BBQ Products</h1>
+      <div class="category-list">
+        <button onclick="showCategory('shirts')">Shirts</button>
+        <button onclick="showCategory('placeholder1')">Placeholder 1</button>
+        <button onclick="showCategory('placeholder2')">Placeholder 2</button>
+      </div>
+      <div class="product-grid" id="productGrid">
+        <!-- Product items will go here -->
+      </div>
+    </div>
+  </section>
+  
+  <script>
+    function showCategory(category) {
+      const productGrid = document.getElementById("productGrid");
+      productGrid.innerHTML = ''; // Clear the grid
+      let products;
+  
+      if (category === 'shirts') {
+        products = [
+          { img: '../images/shirt1.jpg', title: 'Shirt 1', desc: 'Description 1', price: '$20.00', paypalLink: 'https://www.paypal.com/your-link-for-shirt-1' },
+          { img: '../images/shirt2.jpg', title: 'Shirt 2', desc: 'Description 2', price: '$22.00', paypalLink: 'https://www.paypal.com/your-link-for-shirt-2' }
+        ];
+      } else {
+        products = [];
+      }
+      
+      products.forEach(product => {
+        const productItem = document.createElement('div');
+        productItem.className = 'product-item';
+        productItem.innerHTML = `
+          <img src="${product.img}" alt="${product.title}">
+          <h2>${product.title}</h2>
+          <p>${product.desc}</p>
+          <span class="price">${product.price}</span>
+          <a href="${product.paypalLink}" target="_blank">
+            <button>Buy Now</button>
+          </a>
+        `;
+        productGrid.appendChild(productItem);
+      });
+    }
+  </script>
+  
       <!-- Site footer -->
       <footer id="footer" class="footer-1">
          <div class="main-footer widgets-dark typo-light">
