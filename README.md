@@ -2,4 +2,4 @@
 papadieselsbbq
 
 
-temporarily live @ https://papadieselsbbq.com/
+live @ https://papadieselsbbq.com/
