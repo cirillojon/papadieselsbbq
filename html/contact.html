@@ -110,20 +110,14 @@
         <div class="container-custom container-custom--pxy">
             <!-- Intro to the page -->
             <h1>Got a question?</h1>
-            <!-- <p>Leave us a message below!</p> -->
             <!-- Contact form -->
-
             <div class="contact__form">
                 <!-- Success message -->
-                <div class="alert alert-success" role="alert" id="success_message">Success 😊<br><i
-                        class="glyphicon glyphicon-thumbs-up"></i>Thanks for contacting us, we will get back to you
-                    as soon as possible.</div>
+                <div class="alert alert-success" role="alert" id="success_message">Success 😊<br><i class="glyphicon glyphicon-thumbs-up"></i>Thanks for contacting us, we will get back to you as soon as possible.</div>
                 <div class="contact__wrap">
-                    <form
-                        action="https://script.google.com/macros/s/AKfycbxm2awHkqrDlLc0Z7xBCBkRI56IX1G1UbneEGefj4KvqUsYG50/exec"
-                        method="POST" onsubmit="event.preventDefault();" id="contact_form">
+                    <!-- Update the action attribute with your Formspree endpoint -->
+                    <form action="https://formspree.io/f/xyyrykgw" method="POST" id="contact_form">
                         <fieldset>
-
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Name</label>
@@ -133,50 +127,44 @@
                                     </div>
                                 </div>
                             </div>
-
+    
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Email</label>
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
-                                        <input name="email" placeholder="bbq.lover@gmail.com" class="form-control"
-                                            type="text">
+                                        <input name="email" placeholder="bbq.lover@gmail.com" class="form-control" type="email">
                                     </div>
                                 </div>
                             </div>
-
-
+    
                             <!-- Text input-->
                             <div class="form-group">
                                 <label class="col-md-4 control-label">Phone #</label>
                                 <div class="col-md-4 inputGroupContainer">
                                     <div class="input-group">
-                                        <input name="phone" placeholder="(845)555-1212" class="form-control"
-                                            type="text">
+                                        <input name="phone" placeholder="(845)555-1212" class="form-control" type="text">
                                     </div>
                                 </div>
                             </div>
-
+    
                             <!-- Text area -->
                             <div class="form-group">
                                 <label class="col-md-6 control-label">Message</label>
                                 <div class="col-md-6 inputGroupContainer">
                                     <div class="input-group">
-                                        <textarea class="form-control" name="message" placeholder="Leave a message..."
-                                            rows="5" cols="10"></textarea>
+                                        <textarea class="form-control" name="message" placeholder="Leave a message..." rows="5" cols="10"></textarea>
                                     </div>
                                 </div>
                             </div>
-
+    
                             <!-- Button -->
                             <div class="form-group">
                                 <label class="col-md-4 control-label"></label>
                                 <div class="col-md-4">
-                                    <button type="submit" class="button">Send&nbsp;&nbsp;<ion-icon name="send-outline">
-                                        </ion-icon><span class="glyphicon glyphicon-send"></span></button>
+                                    <button type="submit" class="button">Send&nbsp;&nbsp;<ion-icon name="send-outline"></ion-icon><span class="glyphicon glyphicon-send"></span></button>
                                 </div>
                             </div>
-
                         </fieldset>
                     </form>
                 </div>
