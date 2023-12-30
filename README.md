@@ -2,4 +2,4 @@
 papadieselsbbq
 
 
-temporarily live @ https://cirillojon.github.io/pdb-new/
+temporarily live @ https://papadieselsbbq.com/
