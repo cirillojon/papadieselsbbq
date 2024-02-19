@@ -1,36 +1,41 @@
+html {
+  font-size: 16px; /* Base font size */
+}
+
 .header {
   background-color: $red;
   box-shadow: 0 2px 2px $darkBrown;
 }
 
+.brand-container {
+  width: 100%;
+  padding: 0 1rem; /* Horizontal padding */
+  box-sizing: border-box;
+}
+
 .brand {
   vertical-align: middle;
-  // font-size: 1.65rem;
-  // font-size: $font-xl;
-  font-size: 3vw;
-  // letter-spacing: 0.325rem;
-  // color: $veryLightBrown;
   color: $wood;
   font-family: "Oswald", sans-serif;
-  overflow: wrap;
-  word-wrap: break-word;
+  /* More aggressive clamp values to ensure better scaling */
+  font-size: clamp(1rem, 3vw, 1.2rem); /* Adjusted for better scaling */
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
 
-  /*
-  @include breakpoint-down(medium) {
-    font-size: 1.65rem;
+/* Additional Media Query for very large zoom levels or small screens */
+@media (max-width: 400px) {
+  .brand {
+    font-size: 1rem; /* Fixed small font size for extreme cases */
   }
-
-  */
-
-  @include breakpoint-down(medium) {
-    .brand {
-      font-size: 4vw; /* Adjust for medium screens */
-    }
+  /* Hide or replace with a logo if needed */
+  .brand-logo {
+    display: block; /* Show logo */
   }
-
-  @include breakpoint-down(small) {
-    overflow: wrap;
-    display: none;
+  .brand-text {
+    display: none; /* Hide text */
   }
 }
 
@@ -49,22 +54,24 @@
   padding: 8px 10px;
   border-radius: 3px;
   background-color: transparent;
-  // color: $darkBrown;
   color: $wood;
   text-transform: uppercase;
   align-self: center;
   font-weight: bold;
 
+  /* Hide #toggle-nav on larger screens */
   @media (min-width: 769px) {
     display: none;
   }
 
+  /* Adjust margin for smaller screens */
   @media (max-width: 768px) {
     margin-right: 5px;
   }
 }
 
 .main-nav__heading {
+  /* Flex layout for smaller screens */
   @media (max-width: 768px) {
     width: 100%;
     display: flex;
